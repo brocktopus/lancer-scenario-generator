@@ -27,4 +27,10 @@ article > section {
   align-items: stretch;
 }
 
+@media only screen and (max-width: 640px) {
+  article {
+    flex-direction: column;
+  }
+}
+
 

@@ -5,13 +5,26 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  width: 100%;
 }
 
 h3.npc-h3 {
   margin-top: 2em;
 }
 
-
-section {
-  margin-bottom: 3em;
+article {
+  display: flex;
 }
+
+article > section {
+  margin-bottom: 3em;
+  padding: 1em;
+  border: 1px solid #000;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+

@@ -28,6 +28,11 @@ function scenarioGenerate() {
   document.getElementById("anthropocentric-feature").innerHTML = anthropocene;
 
 
+  // Add possibility for hazardous environment on station world.
+
+  isHazardous("natural-feature");
+
+
  // Assemble mission parameters.
 
   var source = mission_source[Math.floor(Math.random() * mission_source.length)];
@@ -38,6 +43,10 @@ function scenarioGenerate() {
   document.getElementById("mission-source").innerHTML = source;
   document.getElementById("mission-hook").innerHTML = hook;
   document.getElementById("mission-location").innerHTML = location;
+
+  // Add possibility for hazardous environment on mission location world.
+
+  isHazardous("mission-location");
   document.getElementById("mission-complication").innerHTML = complication;
 
 
@@ -83,5 +92,17 @@ function scenarioGenerate() {
       document.getElementById("npcs").appendChild(force_tag);
 
     }
+  }
+}
+
+// Calculate possible hazardous environment, using document element ID as the input "element" argument.
+
+function isHazardous(element) {
+  var rand_hazard = Math.floor(Math.random() * 10);
+  if (rand_hazard ==1 ) {
+    var hazard_tag = document.createElement("p");
+    hazard_tag.innerHTML = hazardous_environment[Math.floor(Math.random() * hazardous_environment.length)];
+    //hazard_tag.appendChild(hazard);
+    document.getElementById(element).appendChild(hazard_tag);
   }
 }

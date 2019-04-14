@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <script type ="text/javascript" src="js/list-anthropocentric-features.js"></script>
+  <script type ="text/javascript" src="js/list-hazardous-environments.js"></script>
   <script type ="text/javascript" src="js/list-mission-complications.js"></script>
   <script type ="text/javascript" src="js/list-mission-hooks.js"></script>
   <script type ="text/javascript" src="js/list-mission-locations.js"></script>
@@ -26,67 +27,76 @@
 
   <h1><cite>Lancer</cite> RPG: Basic Mission/Scenario Generator</h1>
 
+  <section id="general">
 
-<button onClick="scenarioGenerate();">Click or refresh page for a new scenario</button>
-
-
-  <section id="world">
-
-    <h2>Station World</h2>
-
-    <p id="world-type">
+    <p>
+      The following details are generated randomly from the details provided in the <cite>Lancer</cite> rulebook in the chapter "An Endless Generator, An Unquiet Forge."
     </p>
 
 
-    <h3>Natural Feature</h3>
-
-    <p id="natural-feature">
-    </p>
-
-
-    <h3>Anthropocentric Feature</h3>
-
-    <p id="anthropocentric-feature">
-    </p>
+    <button onClick="scenarioGenerate();">Click or refresh page for a new scenario</button>
 
   </section>
 
+  <article>
 
-  <section id="mission">
+    <section id="world">
 
-    <h2>Mission Parameters</h2>
+        <h2>Station Locale</h2>
 
-    <h3>Source</h3>
-
-    <p id="mission-source">
-    </p>
-
-    <h3>Hook</h3>
-
-    <p id="mission-hook">
-    </p>
-
-    <h3>Location</h3>
-
-    <p id="mission-location">
-    </p>
-
-    <h3>Complication</h3>
-
-    <p id="mission-complication">
-    </p>
+        <p id="world-type">
+        </p>
 
 
-  </section>
+        <h3>Natural Feature(s)</h3>
+
+        <p id="natural-feature">
+        </p>
 
 
-  <section id="npcs">
+      <h3>Anthropocentric Feature</h3>
 
-  <h2>NPC Force(s) of Note</h2>
+      <p id="anthropocentric-feature">
+      </p>
+
+    </section>
+
+
+    <section id="mission">
+
+      <h2>Mission Parameters</h2>
+
+      <h3>Source</h3>
+
+      <p id="mission-source">
+      </p>
+
+      <h3>Hook</h3>
+
+      <p id="mission-hook">
+      </p>
+
+      <h3>Location</h3>
+
+      <p id="mission-location">
+      </p>
+
+      <h3>Complication</h3>
+
+      <p id="mission-complication">
+      </p>
+
+
+    </section>
+
+
+    <section id="npcs">
+
+    <h2>NPC Force(s) of Note</h2>
 
 
 
-  </section>
+  </article>
 
 
 <script>

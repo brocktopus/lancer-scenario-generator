@@ -8,6 +8,8 @@ function scenarioGenerate() {
   var world = world_type[Math.floor(Math.random() * world_type.length)];
   var nature = natural_feature[Math.floor(Math.random() * natural_feature.length)];
 
+  // Adding possibility of no anthropocenic features on inhospitable planets. (Only happens 50% of the time.)
+
   if (world.includes("inhospitable")) {
 
     var rand_inhospitable = Math.floor(Math.random() * 2);

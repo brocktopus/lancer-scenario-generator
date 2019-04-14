@@ -1,11 +1,13 @@
 var npc_faction = 
 [
-  "Union Regulars -- OR -- local military",
-  "Union Auxiliary -- OR — local militia",
+  "Union Regulars",
+  "Union Auxiliary",
   "Union Department of Justice and Human Rights, Emancipation Team",
   "Union Intelligence Bureau, Field Team",
   "Union Naval Intelligence, Field Team",
   "Union Far Field Team, Security",
+  "Local Military",
+  "Local Militia",
   "Harrison Armory, Acquisition Team",
   "Harrison Armory, Colonial Legion",
   "Harrison Armory, Board Intelligence Field Team",

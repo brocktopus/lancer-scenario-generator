@@ -9,8 +9,15 @@ function scenarioGenerate() {
   var nature = natural_feature[Math.floor(Math.random() * natural_feature.length)];
 
   if (world.includes("inhospitable")) {
-    var anthropocene = "None."
-  } else {
+
+    var rand_inhospitable = Math.floor(Math.random() * 2);
+    
+    if (rand_inhospitable < 1) {
+      var anthropocene = "None.";
+    }
+  }
+  
+  if (anthropocene == null) {
     var anthropocene = anthropocentric_feature[Math.floor(Math.random() * anthropocentric_feature.length)];
   }
 

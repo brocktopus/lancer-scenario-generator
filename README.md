@@ -2,6 +2,8 @@
 
 This is a pretty simple randomizer that will generate some basic parameters for a mission in the [_Lancer_ tabletop RPG](https://twitter.com/Lancer_RPG) by Tom Parkinson Morgan and Miguel Lopez.
 
+View randomized scenarios at http://brocktopus.github.io/lancer-scenario-generator/
+
 In the near future, I hope to improve the granularity of randomized elements so as to produce a much wider range of potential missions/scenarios.
 
 

@@ -1,0 +1,97 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <title>Lancer RPG: Basic Mission/Scenario Generator</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script type ="text/javascript" src="js/list-anthropocentric-features.js"></script>
+  <script type ="text/javascript" src="js/list-mission-complications.js"></script>
+  <script type ="text/javascript" src="js/list-mission-hooks.js"></script>
+  <script type ="text/javascript" src="js/list-mission-locations.js"></script>
+  <script type ="text/javascript" src="js/list-mission-sources.js"></script>
+  <script type ="text/javascript" src="js/list-natural-features.js"></script>
+  <script type ="text/javascript" src="js/list-npc-factions.js"></script>
+  <script type ="text/javascript" src="js/list-npc-forces.js"></script>
+  <script type ="text/javascript" src="js/list-npc-signatures.js"></script>
+  <script type ="text/javascript" src="js/list-world-types.js"></script>
+  <script type ="text/javascript" src="js/scenario-generator.js"></script>
+
+</head>
+
+<body>
+
+  <h1><cite>Lancer</cite> RPG: Basic Mission/Scenario Generator</h1>
+
+
+<button onClick="scenarioGenerate();">Click or refresh page for a new scenario</button>
+
+
+  <section id="world">
+
+    <h2>Station World</h2>
+
+    <p id="world-type">
+    </p>
+
+
+    <h3>Natural Feature</h3>
+
+    <p id="natural-feature">
+    </p>
+
+
+    <h3>Anthropocentric Feature</h3>
+
+    <p id="anthropocentric-feature">
+    </p>
+
+  </section>
+
+
+  <section id="mission">
+
+    <h2>Mission Parameters</h2>
+
+    <h3>Source</h3>
+
+    <p id="mission-source">
+    </p>
+
+    <h3>Hook</h3>
+
+    <p id="mission-hook">
+    </p>
+
+    <h3>Location</h3>
+
+    <p id="mission-location">
+    </p>
+
+    <h3>Complication</h3>
+
+    <p id="mission-complication">
+    </p>
+
+
+  </section>
+
+
+  <section id="npcs">
+
+  <h2>NPC Force(s) of Note</h2>
+
+
+
+  </section>
+
+
+<script>
+  scenarioGenerate();
+</script>
+
+</body>
+</html>

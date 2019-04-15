@@ -39,6 +39,7 @@ function scenarioGenerate() {
   var hook = mission_hook[Math.floor(Math.random() * mission_hook.length)];
   var location = mission_location[Math.floor(Math.random() * mission_location.length)];
   var complication = mission_complication[Math.floor(Math.random() * mission_complication.length)];
+  var sitrep = mission_sitrep[Math.floor(Math.random() * mission_sitrep.length)];
 
   document.getElementById("mission-source").innerHTML = source;
   document.getElementById("mission-hook").innerHTML = hook;
@@ -48,9 +49,9 @@ function scenarioGenerate() {
 
   isHazardous("mission-location");
   document.getElementById("mission-complication").innerHTML = complication;
+  document.getElementById("mission-sitrep").innerHTML = "For additional combat, incorporate a(n) <strong>" + sitrep + "</strong> scenario.";
 
-
-  // Populate NPC forces.
+  // Populate NPC forces (currently, max 4).
 
   var rand_npc = Math.floor(Math.random() * 4);
 
@@ -63,6 +64,8 @@ function scenarioGenerate() {
   } else {
 
     for (var i = 0; i < rand_npc; i++) {
+
+      // Establish orientation of NPCs toward party.
 
       var is_friendly = npc_friendly[Math.floor(Math.random() * npc_friendly.length)];
 
@@ -90,7 +93,7 @@ function scenarioGenerate() {
 function isHazardous(element) {
   var rand_hazard = Math.floor(Math.random() * 10);
   if (rand_hazard ==1 ) {
-    var hazard_tag = document.createElement("p");
+    var hazard = document.createElement("p");
     hazard.innerHTML = hazardous_environment[Math.floor(Math.random() * hazardous_environment.length)];
     document.getElementById(element).appendChild(hazard);
   }

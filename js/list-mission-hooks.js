@@ -21,3 +21,13 @@ var mission_hook =
   "Liberate a people held hostage from their cruel ruler, with Union’s backing.",
   "Intervene in a desperate attempt to stop an incoming missile or attack."
 ];
+
+var mission_sitrep =
+[
+  "Escort",
+  "Control",
+  "Extract",
+  "Hold Out",
+  "Gauntlet",
+  "Recon"
+];

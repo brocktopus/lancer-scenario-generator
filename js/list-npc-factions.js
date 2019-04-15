@@ -26,9 +26,9 @@ var npc_faction =
 
 var npc_friendly =
 [
-"Formally allied with",
-"Friendly toward",
-"Neutral toward",
-"Unfriendly toward",
-"Enemies with"
+  "Formally allied with",
+  "Friendly toward",
+  "Neutral toward",
+  "Unfriendly toward",
+  "Enemies with"
 ];

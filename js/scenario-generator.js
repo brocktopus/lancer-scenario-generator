@@ -157,8 +157,12 @@ function composeNPC() {
     var npc_name = "TBA";
   }
 
+  var npc_name_tag = document.createElement("h3");
+  npc_name_tag.innerHTML = npc_name;
+  document.getElementById("npcs").appendChild(npc_name_tag);
+
   var npc = document.createElement("p");
-  npc.innerHTML = "<strong>Pilot Name:</strong> " + npc_name + "<br /><strong>Mech Class:</strong> " + npc_class + ".<br /><strong>Template:</strong> " + npc_template + ".<br /><strong>Modules:</strong> " + module_list + "<br /><strong>Tier:</strong> " + npc_tier + ".";
+  npc.innerHTML = "<strong>Mech Class:</strong> " + npc_class + ".<br /><strong>Template:</strong> " + npc_template + ".<br /><strong>Modules:</strong> " + module_list + "<br /><strong>Tier:</strong> " + npc_tier + ".";
   document.getElementById("npcs").appendChild(npc);
 }
 

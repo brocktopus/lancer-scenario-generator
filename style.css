@@ -22,15 +22,24 @@ article > section {
   margin-bottom: 3em;
   padding: 1em;
   border: 1px solid #000;
+  border-right: 0;
   flex: 1;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
 }
 
+article > section:last-child {
+  border-right: 1px solid #000;
+}
+
 @media only screen and (max-width: 640px) {
   article {
     flex-direction: column;
+  }
+
+  article > section {
+    border: 1px solid #000;
   }
 }
 

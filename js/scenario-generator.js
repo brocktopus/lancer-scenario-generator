@@ -56,10 +56,9 @@ function scenarioGenerate() {
 
   if (rand_npc < 1) {
     
-    var no_npcs_tag = document.createElement("p");
-    var no_npcs = document.createTextNode("None.");
-    no_npcs_tag.appendChild(no_npcs);
-    document.getElementById("npcs").appendChild(no_npcs_tag);
+    var no_npcs = document.createElement("p");
+    no_npcs.innerHTML = "None.";
+    document.getElementById("npcs").appendChild(no_npcs);
 
   } else {
 
@@ -73,23 +72,20 @@ function scenarioGenerate() {
         var friendly = "Unfriendly";
       }
 
-      var faction_tag = document.createElement("h3");
-      var faction = document.createTextNode(npc_faction[Math.floor(Math.random() * npc_faction.length)] + " (" + friendly + " to the party)");
-      faction_tag.appendChild(faction);
-      faction_tag.className = "npc-h3";
+      var faction = document.createElement("h3");
+      faction.innerHTML = npc_faction[Math.floor(Math.random() * npc_faction.length)] + " (" + friendly + " to the party)";
+      faction.className = "npc-h3";
 
-      var signature_tag = document.createElement("p");
-      var signature = document.createTextNode(npc_signature[Math.floor(Math.random() * npc_signature.length)]);
-      signature_tag.appendChild(signature);
+      var signature = document.createElement("p");
+      signature.innerHTML = npc_signature[Math.floor(Math.random() * npc_signature.length)];
 
-      var force_tag = document.createElement("p");
-      var force = document.createTextNode(npc_force[Math.floor(Math.random() * npc_force.length)]);
-      force_tag.appendChild(force);
+      var force = document.createElement("p");
+      force.innerHTML = npc_force[Math.floor(Math.random() * npc_force.length)];
 
 
-      document.getElementById("npcs").appendChild(faction_tag);
-      document.getElementById("npcs").appendChild(signature_tag);
-      document.getElementById("npcs").appendChild(force_tag);
+      document.getElementById("npcs").appendChild(faction);
+      document.getElementById("npcs").appendChild(signature);
+      document.getElementById("npcs").appendChild(force);
 
     }
   }
@@ -101,8 +97,7 @@ function isHazardous(element) {
   var rand_hazard = Math.floor(Math.random() * 10);
   if (rand_hazard ==1 ) {
     var hazard_tag = document.createElement("p");
-    hazard_tag.innerHTML = hazardous_environment[Math.floor(Math.random() * hazardous_environment.length)];
-    //hazard_tag.appendChild(hazard);
-    document.getElementById(element).appendChild(hazard_tag);
+    hazard.innerHTML = hazardous_environment[Math.floor(Math.random() * hazardous_environment.length)];
+    document.getElementById(element).appendChild(hazard);
   }
 }

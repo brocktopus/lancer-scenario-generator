@@ -20,4 +20,4 @@ var mission_source =
   "Of your own volition, out of desire.",
   "Of your own volition, out of a sense of duty.",
   "Of your own volition, out of a need for revenge."
-]
+];

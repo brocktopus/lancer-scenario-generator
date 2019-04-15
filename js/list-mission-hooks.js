@@ -20,4 +20,4 @@ var mission_hook =
   "During a massive attack, strike the enemy’s critical weak point to make a breakthrough.",
   "Liberate a people held hostage from their cruel ruler, with Union’s backing.",
   "Intervene in a desperate attempt to stop an incoming missile or attack."
-]
+];

@@ -20,4 +20,4 @@ var mission_location =
 "In the hard vacuum of space, among the ruins of the fleet.",
 "In the hard vacuum of space, between the ink-black hulls of capital ships on long patrol.",
 "On the hardpack surface of a comet, whose horizon is never far away, whose chasms and valleys are picked out in sharp relief by the hard light of a nearby star."
-]
+];

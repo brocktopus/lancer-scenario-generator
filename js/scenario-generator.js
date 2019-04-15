@@ -67,7 +67,7 @@ function scenarioGenerate() {
       var is_friendly = npc_friendly[Math.floor(Math.random() * npc_friendly.length)];
 
       var faction = document.createElement("h3");
-      faction.innerHTML = npc_faction[Math.floor(Math.random() * npc_faction.length)] + " (" + friendly + " the party)";
+      faction.innerHTML = npc_faction[Math.floor(Math.random() * npc_faction.length)] + " (" + is_friendly + " the party)";
       faction.className = "npc-h3";
 
       var signature = document.createElement("p");

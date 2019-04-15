@@ -20,4 +20,4 @@ var mission_complication =
 "Completing the mission requires some interstellar transit, which would divorce you from the subjective timeline of your friends and family back home.",
 "This mission is set up to fail, but you don’t know that yet. Someone higher up in your organization wants you dead.",
 "The world has been visited previously by RA, and it bears markings of the MONIST entity's passing."
-]
+];

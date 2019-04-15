@@ -22,7 +22,7 @@ var npc_faction =
   "Voladores and Sparri Espadas",
   "Sparri Espadas, Free Band",
   "Anomalous/unknown"
-]
+];
 
 var npc_friendly =
 [
@@ -31,4 +31,4 @@ var npc_friendly =
 "Neutral toward",
 "Unfriendly toward",
 "Enemies with"
-]
+];

@@ -51,6 +51,7 @@ function scenarioGenerate() {
   document.getElementById("mission-complication").innerHTML = complication;
   document.getElementById("mission-sitrep").innerHTML = "For additional combat, incorporate a(n) <strong>" + sitrep + "</strong> scenario.";
 
+
   // Populate NPC forces (currently, max 4).
 
   var rand_npc = Math.floor(Math.random() * 4);
@@ -59,7 +60,7 @@ function scenarioGenerate() {
     
     var no_npcs = document.createElement("p");
     no_npcs.innerHTML = "None.";
-    document.getElementById("npcs").appendChild(no_npcs);
+    document.getElementById("npc-forces").appendChild(no_npcs);
 
   } else {
 
@@ -80,13 +81,87 @@ function scenarioGenerate() {
       force.innerHTML = npc_force[Math.floor(Math.random() * npc_force.length)];
 
 
-      document.getElementById("npcs").appendChild(faction);
-      document.getElementById("npcs").appendChild(signature);
-      document.getElementById("npcs").appendChild(force);
+      document.getElementById("npc-forces").appendChild(faction);
+      document.getElementById("npc-forces").appendChild(signature);
+      document.getElementById("npc-forces").appendChild(force);
 
     }
   }
+
+  // Bring in individual NPCs of note.
+
+  var how_many_npcs = Math.floor(Math.random() * 4) + 1;
+  for (var i = 0; i < how_many_npcs; i++) {
+    composeNPC();
+  }
 }
+
+function composeNPC() {
+
+  // Sketch out individual NPC.
+
+  var npc_class = person_class[Math.floor(Math.random() * person_class.length)];
+  var npc_template = person_template[Math.floor(Math.random() * person_template.length)];
+  var npc_modules = person_modules[Math.floor(Math.random() * person_modules.length)];
+  var npc_tier = person_tier[Math.floor(Math.random() * person_tier.length)];
+
+  var module_list = "";
+  
+  if (npc_modules == 0) {
+    module_list = "None.";
+  } else {
+    var npc_module = new Array(npc_modules);
+  }
+
+  if (npc_modules > 0) {
+    for (var i = 0; i < npc_modules; i++) {
+      switch (npc_template) {
+        case "Ultra":
+          if (i == 0) {
+            npc_modules++;
+          }
+          npc_module[i] = person_template_ultra[Math.floor(Math.random() * person_template_ultra.length)];
+        case "Veteran":
+          if (i > npc_tier) {
+          } else {
+          npc_module[i] = person_template_veteran[Math.floor(Math.random() * person_template_veteran.length)];
+          }
+        case "Exotic":
+          if (i > npc_tier) {
+          } else {
+          npc_module[i] = person_template_exotic[Math.floor(Math.random() * person_template_exotic.length)];
+          }
+        case "Mercenary":
+          npc_module[i] = person_template_mercenary[Math.floor(Math.random() * person_template_mercenary.length)];
+        case "Commander":
+          if (i > 0) {
+          } else {
+            npc_module[i] = person_template_commander[Math.floor(Math.random() * person_template_commander.length)];
+          }
+        case "Pirate":
+          npc_module[i] = person_template_pirate[Math.floor(Math.random() * person_template_pirate.length)];
+        case "Spacer":
+          npc_module[i] = person_template_spacer[Math.floor(Math.random() * person_template_spacer.length)];
+        default:
+          npc_module[i] = "Basic class module (TBA)";
+        break;
+      };
+      module_list += npc_module[i] + ". ";
+    }
+  }
+
+  var rand_name = Math.random();
+  if (rand_name < 0.5) {
+    var npc_name = "TBA";
+  } else {
+    var npc_name = "TBA";
+  }
+
+  var npc = document.createElement("p");
+  npc.innerHTML = "<strong>Pilot Name:</strong> " + npc_name + "<br /><strong>Mech Class:</strong> " + npc_class + ".<br /><strong>Template:</strong> " + npc_template + ".<br /><strong>Modules:</strong> " + module_list + "<br /><strong>Tier:</strong> " + npc_tier + ".";
+  document.getElementById("npcs").appendChild(npc);
+}
+
 
 // Calculate possible hazardous environment, using document element ID as the input "element" argument.
 

@@ -9,6 +9,16 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+section h2 {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: -1em -1em 1em -0.75em;
+  padding: 0.5em 0.5em 0.5em 1em;
+}
+
 h3.npc-h3 {
   margin-top: 2em;
 }
@@ -16,30 +26,33 @@ h3.npc-h3 {
 article {
   display: flex;
   margin-top: 2em;
+  margin-bottom: 2em;
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 article > section {
-  margin-bottom: 3em;
   padding: 1em;
   border: 1px solid #000;
   border-right: 0;
-  flex: 1;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  width: 45%;
+  justify-content: center;
   align-items: stretch;
 }
 
-article > section:last-child {
+article > section:nth-child(2n) {
   border-right: 1px solid #000;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 800px) {
   article {
     flex-direction: column;
   }
 
   article > section {
     border: 1px solid #000;
+    width: 100%;
   }
 }
 

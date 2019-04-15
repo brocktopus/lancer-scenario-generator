@@ -23,3 +23,12 @@ var npc_faction =
   "Sparri Espadas, Free Band",
   "Anomalous/unknown"
 ]
+
+var npc_friendly =
+[
+"Formally allied with",
+"Friendly toward",
+"Neutral toward",
+"Unfriendly toward",
+"Enemies with"
+]

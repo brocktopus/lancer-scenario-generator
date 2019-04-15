@@ -64,16 +64,10 @@ function scenarioGenerate() {
 
     for (var i = 0; i < rand_npc; i++) {
 
-      var is_friendly = Math.random();
-
-      if (is_friendly > 0.5) {
-        var friendly = "Friendly";
-      } else {
-        var friendly = "Unfriendly";
-      }
+      var is_friendly = npc_friendly[Math.floor(Math.random() * npc_friendly.length)];
 
       var faction = document.createElement("h3");
-      faction.innerHTML = npc_faction[Math.floor(Math.random() * npc_faction.length)] + " (" + friendly + " to the party)";
+      faction.innerHTML = npc_faction[Math.floor(Math.random() * npc_faction.length)] + " (" + friendly + " the party)";
       faction.className = "npc-h3";
 
       var signature = document.createElement("p");

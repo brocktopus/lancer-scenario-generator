@@ -21,3 +21,15 @@ While this is a pretty simple project, there are some awesome initiatives out th
 
 The vast majority of material used for this page comes directly from the _Lancer_ rulebook. However, some of the randomly generated fields are populated with content taken from other name- and plot- generator sites.
 
+NPC name lists seeded by:
+
+* The amazing lists used at [Eigengrau's Generator](http://eigengrausgenerator.com/), the files for which are available at https://github.com/ryceg/Eigengrau-s-Essential-Establishment-Generator
+* Kerbal name generator by Jacob Swanson at https://github.com/jacob-swanson/kerbonaut-naming
+* Sci-fi planet name generator by Hakan Bilgin at https://github.com/hbi99/namegen
+
+NPC mecha name lists seeded by lists for:
+
+* Heroku app-style name generator by Akash K at https://github.com/aceakash/project-name-generator/
+* Random name generator by Ben Weaver at https://github.com/weaver/moniker
+* Codename generator by R.J. Zaworski at https://github.com/rjz/codename/
+* Heavy metal band name generator by Rich Trott at https://github.com/Trott/metal-name

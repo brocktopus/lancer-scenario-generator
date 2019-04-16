@@ -1,4 +1,4 @@
-var npc_faction = 
+var npc_faction =
 [
   "Union Regulars",
   "Union Auxiliary",
@@ -18,10 +18,13 @@ var npc_faction =
   "HORUS, Local Cell",
   "Baronic House Company",
   "Baronic Free Company",
-  "MSMC, Company Detachment",
+  "Mirrorsmoke Mercenary Company, Company Detachment",
   "Voladores and Sparri Espadas",
   "Sparri Espadas, Free Band",
-  "Anomalous/unknown"
+  "Anomalous/unknown",
+  "Ungrateful Partisans",
+  "The Albatross",
+  "Egregorians"
 ];
 
 var npc_friendly =

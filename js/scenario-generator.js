@@ -13,12 +13,12 @@ function scenarioGenerate() {
   if (world.includes("inhospitable")) {
 
     var rand_inhospitable = Math.floor(Math.random() * 2);
-    
+
     if (rand_inhospitable < 1) {
       var anthropocene = "None.";
     }
   }
-  
+
   if (anthropocene == null) {
     var anthropocene = anthropocentric_feature[Math.floor(Math.random() * anthropocentric_feature.length)];
   }
@@ -57,7 +57,7 @@ function scenarioGenerate() {
   var rand_npc = Math.floor(Math.random() * 4);
 
   if (rand_npc < 1) {
-    
+
     var no_npcs = document.createElement("p");
     no_npcs.innerHTML = "None.";
     document.getElementById("npc-forces").appendChild(no_npcs);
@@ -106,7 +106,7 @@ function composeNPC() {
   var npc_tier = person_tier[Math.floor(Math.random() * person_tier.length)];
 
   var module_list = "";
-  
+
   if (npc_modules == 0) {
     module_list = "None.";
   } else {
@@ -146,23 +146,62 @@ function composeNPC() {
           npc_module[i] = "Basic class module (TBA)";
         break;
       };
-      module_list += npc_module[i] + ". ";
+      if (i < npc_modules) {
+        module_list += npc_module[i] + ", ";
+      }
     }
   }
 
+  // Name the NPC.
+
   var rand_name = Math.random();
   if (rand_name < 0.5) {
-    var npc_name = "TBA";
+    var npc_first = person_name_first[Math.floor(Math.random() * person_name_first.length)];
+    var npc_last = person_name_last[Math.floor(Math.random() * person_name_last.length)];
+    var npc_name = npc_first + " " + npc_last;
   } else {
-    var npc_name = "TBA";
+    var npc_prefix = person_name_prefix[Math.floor(Math.random() * person_name_prefix.length)];
+    var npc_suffix = person_name_suffix[Math.floor(Math.random() * person_name_suffix.length)];
+    var rand_world_name = world_name_gen(1);
+    var world_name = rand_world_name[0];
+    var npc_name = npc_prefix + npc_suffix + " of " + world_name.charAt(0).toUpperCase() + world_name.slice(1);
   }
+
+  // Name the mech/ship used by the NPC.
+
+  var rand_mech = Math.random();
+  if (rand_mech < 0.33) {
+    var rand_mech_adj = mech_name_adj[Math.floor(Math.random() * mech_name_adj.length)];
+    if (rand_mech < 0.15) {
+      var rand_mech_noun = mech_name_animal[Math.floor(Math.random() * mech_name_animal.length)];
+    } else {
+      var rand_mech_noun = mech_name_noun[Math.floor(Math.random() * mech_name_noun.length)];
+    }
+    var mech_name = rand_mech_adj.charAt(0).toUpperCase() + rand_mech_adj.slice(1) + " " + rand_mech_noun.charAt(0).toUpperCase() + rand_mech_noun.slice(1);
+  } else if (rand_mech < 0.66) {
+    if (rand_mech < 0.48) {
+      var rand_mech_noun1 = mech_name_animal[Math.floor(Math.random() * mech_name_animal.length)];
+    } else {
+      var rand_mech_noun1 = mech_name_noun[Math.floor(Math.random() * mech_name_noun.length)];
+    }
+    var rand_mech_noun2 = mech_name_noun[Math.floor(Math.random() * mech_name_noun.length)];
+    var mech_name = rand_mech_noun1.charAt(0).toUpperCase() + rand_mech_noun1.slice(1) + " of " + rand_mech_noun2.charAt(0).toUpperCase() + rand_mech_noun2.slice(1);
+  } else {
+    if (rand_mech > 0.80) {
+      var rand_mech_noun = mech_name_animal[Math.floor(Math.random() * mech_name_animal.length)];
+    } else {
+      var rand_mech_noun = mech_name_noun[Math.floor(Math.random() * mech_name_noun.length)];
+    }
+    var rand_mech_verb = mech_name_verb[Math.floor(Math.random() * mech_name_verb.length)];
+    var mech_name = rand_mech_noun.charAt(0).toUpperCase() + rand_mech_noun.slice(1) + " " + rand_mech_verb.charAt(0).toUpperCase() + rand_mech_verb.slice(1);
+}
 
   var npc_name_tag = document.createElement("h3");
   npc_name_tag.innerHTML = npc_name;
   document.getElementById("npcs").appendChild(npc_name_tag);
 
   var npc = document.createElement("p");
-  npc.innerHTML = "<strong>Mech Class:</strong> " + npc_class + ".<br /><strong>Template:</strong> " + npc_template + ".<br /><strong>Modules:</strong> " + module_list + "<br /><strong>Tier:</strong> " + npc_tier + ".";
+  npc.innerHTML = "<strong>Mech Name:</strong> " + mech_name + "<br /><strong>Mech Class:</strong> " + npc_class + "<br /><strong>Template:</strong> " + npc_template + "<br /><strong>Modules:</strong> " + module_list + "<br /><strong>Tier:</strong> " + npc_tier;
   document.getElementById("npcs").appendChild(npc);
 }
 

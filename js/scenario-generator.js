@@ -68,17 +68,17 @@ function scenarioGenerate() {
 
       // Establish orientation of NPCs toward party.
 
-      var is_friendly = npc_friendly[Math.floor(Math.random() * npc_friendly.length)];
+      var is_friendly = randomize(npc_friendly);
 
       var faction = document.createElement("h3");
       faction.innerHTML = npc_faction[Math.floor(Math.random() * npc_faction.length)] + " (" + is_friendly + " the party)";
       faction.className = "npc-h3";
 
       var signature = document.createElement("p");
-      signature.innerHTML = npc_signature[Math.floor(Math.random() * npc_signature.length)];
+      signature.innerHTML = randomize(npc_signature);
 
       var force = document.createElement("p");
-      force.innerHTML = npc_force[Math.floor(Math.random() * npc_force.length)];
+      force.innerHTML = randomize(npc_force);
 
 
       document.getElementById("npc-forces").appendChild(faction);
@@ -100,10 +100,12 @@ function composeNPC() {
 
   // Sketch out individual NPC.
 
-  var npc_class = person_class[Math.floor(Math.random() * person_class.length)];
-  var npc_template = person_template[Math.floor(Math.random() * person_template.length)];
-  var npc_modules = person_modules[Math.floor(Math.random() * person_modules.length)];
-  var npc_tier = person_tier[Math.floor(Math.random() * person_tier.length)];
+  var npc_class = randomize(person_class);
+  var npc_template = randomize(person_template);
+  // NOT randomizing npc_modules since this is a number
+  var npc_modules = person_modules[Math.floor(Math.random) * person_modules.length];
+  // npc_tier is also a number
+  var npc_tier = person_tier[Math.floor(Math.random) * person_tier.length];
 
   var module_list = "";
 
@@ -120,28 +122,28 @@ function composeNPC() {
           if (i == 0) {
             npc_modules++;
           }
-          npc_module[i] = person_template_ultra[Math.floor(Math.random() * person_template_ultra.length)];
+          npc_module[i] = randomize(person_template_ultra);
         case "Veteran":
           if (i > npc_tier) {
           } else {
-          npc_module[i] = person_template_veteran[Math.floor(Math.random() * person_template_veteran.length)];
+          npc_module[i] = randomize(person_template_veteran);
           }
         case "Exotic":
           if (i > npc_tier) {
           } else {
-          npc_module[i] = person_template_exotic[Math.floor(Math.random() * person_template_exotic.length)];
+          npc_module[i] = randomize(person_template_exotic);
           }
         case "Mercenary":
-          npc_module[i] = person_template_mercenary[Math.floor(Math.random() * person_template_mercenary.length)];
+          npc_module[i] = randomize(person_template_mercenary);
         case "Commander":
           if (i > 0) {
           } else {
-            npc_module[i] = person_template_commander[Math.floor(Math.random() * person_template_commander.length)];
+            npc_module[i] = randomize(person_template_commander);
           }
         case "Pirate":
-          npc_module[i] = person_template_pirate[Math.floor(Math.random() * person_template_pirate.length)];
+          npc_module[i] = randomize(person_template_pirate);
         case "Spacer":
-          npc_module[i] = person_template_spacer[Math.floor(Math.random() * person_template_spacer.length)];
+          npc_module[i] = randomize(person_template_spacer);
         default:
           npc_module[i] = "Basic class module (TBA)";
         break;
@@ -156,44 +158,44 @@ function composeNPC() {
 
   var rand_name = Math.random();
   if (rand_name < 0.5) {
-    var npc_first = person_name_first[Math.floor(Math.random() * person_name_first.length)];
-    var npc_last = person_name_last[Math.floor(Math.random() * person_name_last.length)];
+    var npc_first = randomize(person_name_first);
+    var npc_last = randomize(person_name_last);
     var npc_name = npc_first + " " + npc_last;
   } else {
-    var npc_prefix = person_name_prefix[Math.floor(Math.random() * person_name_prefix.length)];
-    var npc_suffix = person_name_suffix[Math.floor(Math.random() * person_name_suffix.length)];
+    var npc_prefix = randomize(person_name_prefix);
+    var npc_suffix = randomize(person_name_suffix, true);
     var rand_world_name = world_name_gen(1);
-    var world_name = rand_world_name[0];
-    var npc_name = npc_prefix + npc_suffix + " of " + world_name.charAt(0).toUpperCase() + world_name.slice(1);
+    var world_name = randomize(rand_world_name);
+    var npc_name = npc_prefix + npc_suffix + " of " + world_name;
   }
 
   // Name the mech/ship used by the NPC.
 
   var rand_mech = Math.random();
   if (rand_mech < 0.33) {
-    var rand_mech_adj = mech_name_adj[Math.floor(Math.random() * mech_name_adj.length)];
+    var rand_mech_adj = randomize(mech_name_adj);
     if (rand_mech < 0.15) {
-      var rand_mech_noun = mech_name_animal[Math.floor(Math.random() * mech_name_animal.length)];
+      var rand_mech_noun = randomize(mech_name_animal);
     } else {
-      var rand_mech_noun = mech_name_noun[Math.floor(Math.random() * mech_name_noun.length)];
+      var rand_mech_noun = randomize(mech_name_noun);
     }
-    var mech_name = rand_mech_adj.charAt(0).toUpperCase() + rand_mech_adj.slice(1) + " " + rand_mech_noun.charAt(0).toUpperCase() + rand_mech_noun.slice(1);
+    var mech_name = rand_mech_adj + " " + rand_mech_noun;
   } else if (rand_mech < 0.66) {
     if (rand_mech < 0.48) {
-      var rand_mech_noun1 = mech_name_animal[Math.floor(Math.random() * mech_name_animal.length)];
+      var rand_mech_noun1 = randomize(mech_name_animal);
     } else {
-      var rand_mech_noun1 = mech_name_noun[Math.floor(Math.random() * mech_name_noun.length)];
+      var rand_mech_noun1 = randomize(mech_name_noun);
     }
-    var rand_mech_noun2 = mech_name_noun[Math.floor(Math.random() * mech_name_noun.length)];
-    var mech_name = rand_mech_noun1.charAt(0).toUpperCase() + rand_mech_noun1.slice(1) + " of " + rand_mech_noun2.charAt(0).toUpperCase() + rand_mech_noun2.slice(1);
+    var rand_mech_noun2 = randomize(mech_name_noun);
+    var mech_name = rand_mech_noun1 + " of " + rand_mech_noun2;
   } else {
     if (rand_mech > 0.80) {
-      var rand_mech_noun = mech_name_animal[Math.floor(Math.random() * mech_name_animal.length)];
+      var rand_mech_noun = randomize(mech_name_animal);
     } else {
-      var rand_mech_noun = mech_name_noun[Math.floor(Math.random() * mech_name_noun.length)];
+      var rand_mech_noun = randomize(mech_name_noun);
     }
-    var rand_mech_verb = mech_name_verb[Math.floor(Math.random() * mech_name_verb.length)];
-    var mech_name = rand_mech_noun.charAt(0).toUpperCase() + rand_mech_noun.slice(1) + " " + rand_mech_verb.charAt(0).toUpperCase() + rand_mech_verb.slice(1);
+    var rand_mech_verb = randomize(mech_name_verb);
+    var mech_name = rand_mech_noun + " " + rand_mech_verb;
 }
 
   var npc_name_tag = document.createElement("h3");
@@ -215,4 +217,13 @@ function isHazardous(element) {
     hazard.innerHTML = hazardous_environment[Math.floor(Math.random() * hazardous_environment.length)];
     document.getElementById(element).appendChild(hazard);
   }
+}
+
+// Pull a random element from the input list Array.
+function randomize(my_list, lcase) {
+  var randElement = my_list[Math.floor(Math.random() * my_list.length)];
+  if (!lcase) {
+    randElement = randElement.charAt(0).toUpperCase() + randElement.slice(1);
+  }
+  return randElement;
 }

@@ -1,0 +1,154 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <title>Lancer RPG: Long Rim Station Etc. Generator</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script type ="text/javascript" src="js/long-rim/list-station-seeds.js"></script>
+  <script type ="text/javascript" src="js/long-rim/list-station-quirks-problems.js"></script>
+  <script type ="text/javascript" src="js/long-rim/list-npc-details.js"></script>
+  <script type ="text/javascript" src="js/long-rim/list-drinks.js"></script>
+  <script type ="text/javascript" src="js/long-rim/list-go-diving.js"></script>  
+  <script type ="text/javascript" src="js/long-rim/list-enterprises.js"></script>
+  <script type ="text/javascript" src="js/long-rim/list-pirates.js"></script>
+  <script type ="text/javascript" src="js/long-rim/station-generator.js"></script>
+  <script type ="text/javascript" src="js/core/list-persons.js"></script>
+  <script type ="text/javascript" src="js/core/list-world-names.js"></script>
+  <script type ="text/javascript" src="js/core/world-name-gen.js"></script>
+</head>
+
+<body>
+
+  <h1><cite>Lancer</cite> RPG: Long Rim Station Etc. Generator</h1>
+
+  <section id="general">
+
+    <p>
+      The following details are generated randomly from the details provided in the <cite>Lancer</cite> supplement <cite>The Long Rim</cite>.
+    </p>
+
+    <p>
+      Code, credits, and other information about this generator and <cite>Lancer</cite> are available at <a href="https://github.com/brocktopus/lancer-scenario-generator">https://github.com/brocktopus/lancer-scenario-generator</a>
+    </p>
+
+
+    <button onClick="location.reload();">Click or refresh page for a new scenario</button>
+
+  </section>
+
+  <article>
+
+    <section id="station">
+
+        <h2 id="station-name">Station: </h2>
+
+        <p id="station-seed">
+        </p>
+      
+        <h3>Purpose</h3>
+        
+        <p id="station-purpose">
+        </p>
+
+        <h3>Notable District</h3>
+
+        <p id="district-name">
+        </p>
+        
+        <h3>Locals' Drink</h3>
+        
+        <p id="drink-name">
+        </p>
+
+        <h3>Local Quirk(s)</h3>
+        
+        <p id="station-quirk">
+        </p>
+
+        <h3>Problem(s)</h3>
+        
+        <p id="station-problem">
+        </p>
+        
+        <h3>While diving into the seedy underbelly of the station...</h3>
+        
+        <p id="go-diving">
+        </p>
+
+    </section>
+
+
+    <section id="enterprise">
+
+      <h2 id="enterprise-name">Long Rim Enterprise</h2>
+
+      <h3>Holdings</h3>
+
+      <p id="enterprise-holding">
+      </p>
+
+      <h3 id="enterprise-char-name">Character</h3>
+
+      <p id="enterprise-character">
+      </p>
+
+      <h3>Strength</h3>
+
+      <p id="enterprise-strength">
+      </p>
+
+    </section>
+
+
+    <section id="station-npc">
+
+      <h2 id="npc-name">Station NPC</h2>
+
+      <h3>Description</h3>
+
+      <p id="npc-descriptor-occupation">
+      </p>
+
+      <h3>Quirk</h3>
+
+      <p id="npc-quirk">
+      </p>
+
+      <h3>Motivation</h3>
+
+      <p id="npc-motivation">
+      </p>
+
+    </section>
+
+
+    <section id="pirates">
+
+      <h2 id="pirate-name">Pirates</h2>
+
+      <h3>Clan Hustle</h3>
+
+      <p id="pirate-hustle">
+      </p>
+
+      <h3>Main Asset</h3>
+
+      <p id="pirate-asset">
+      </p>
+
+    </section>
+
+
+  </article>
+
+
+<script>
+  stationGenerate();
+</script>
+
+</body>
+</html>

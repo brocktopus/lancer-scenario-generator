@@ -103,9 +103,9 @@ function composeNPC() {
   var npc_class = randomize(person_class);
   var npc_template = randomize(person_template);
   // NOT randomizing npc_modules since this is a number
-  var npc_modules = person_modules[Math.floor(Math.random) * person_modules.length];
+  var npc_modules = person_modules[Math.floor(Math.random() * person_modules.length)];
   // npc_tier is also a number
-  var npc_tier = person_tier[Math.floor(Math.random) * person_tier.length];
+  var npc_tier = person_tier[Math.floor(Math.random() * person_tier.length)];
 
   var module_list = "";
 
@@ -164,8 +164,8 @@ function composeNPC() {
   } else {
     var npc_prefix = randomize(person_name_prefix);
     var npc_suffix = randomize(person_name_suffix, true);
-    var rand_world_name = world_name_gen(1);
-    var world_name = randomize(rand_world_name);
+    var world_name = world_name_gen(1);
+//    var world_name = randomize(rand_world_name);
     var npc_name = npc_prefix + npc_suffix + " of " + world_name;
   }
 
@@ -221,9 +221,11 @@ function isHazardous(element) {
 
 // Pull a random element from the input list Array.
 function randomize(my_list, lcase) {
-  var randElement = my_list[Math.floor(Math.random() * my_list.length)];
-  if (!lcase) {
-    randElement = randElement.charAt(0).toUpperCase() + randElement.slice(1);
+  var randNumber = Math.floor(Math.random() * my_list.length);
+  var randElement = my_list[randNumber];
+  if (lcase == undefined) {
+    var myElement = randElement.charAt(0).toUpperCase() + randElement.slice(1);
+    randElement = myElement;
   }
   return randElement;
 }
